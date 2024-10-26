@@ -8,12 +8,12 @@ export async function createContact(
   name,
   email,
   phoneNumber,
-  address,
-  timezone
+  contactAddress,
+  contactTimezone
 ) {
   const [contact] = await db.execute(
-    `INSERT INTO contacts (user_id, name, email, phone_number, address) VALUES (?, ?, ?, ?, ?)`,
-    [userId, name, email, phoneNumber, address, timezone]
+    `INSERT INTO contacts (user_id, name, email, phone_number, address, timezone) VALUES (?, ?, ?, ?, ?, ?)`,
+    [userId, name, email, phoneNumber, contactAddress, contactTimezone]
   );
   return contact;
 }

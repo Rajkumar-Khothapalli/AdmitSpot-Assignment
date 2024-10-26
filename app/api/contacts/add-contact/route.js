@@ -24,14 +24,31 @@ export async function POST(req) {
       const { userId, name, email, phoneNumber, address, timezone } =
         await req.json();
 
+      // Validate required fields
+      if (
+        userId === undefined ||
+        name === undefined ||
+        email === undefined ||
+        phoneNumber === undefined
+      ) {
+        return NextResponse.json({
+          message: "userId, name, email, and phoneNumber are required",
+          status: 400,
+        });
+      }
+
+      // Set default values for optional fields
+      const contactAddress = address || null; // Set to null if not provided
+      const contactTimezone = timezone || "UTC"; // Set to 'UTC' if not provided
+
       //Validate request data using Joi
       const { error } = contactSchema.validate({
         userId,
         name,
         email,
         phoneNumber,
-        address,
-        timezone,
+        contactAddress,
+        contactTimezone,
       });
 
       if (error) {
@@ -72,8 +89,8 @@ export async function POST(req) {
         name,
         email,
         phoneNumber,
-        address,
-        timezone
+        contactAddress,
+        contactTimezone
       );
 
       return NextResponse.json({

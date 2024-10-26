@@ -34,13 +34,17 @@ const contactSchema = Joi.object({
       "any.required": "Phone number is required",
     }),
 
-  address: Joi.string().optional().allow(null, "").messages({
+  contactAddress: Joi.string().optional().allow(null, "").messages({
     "string.base": "Address must be a string",
   }),
 
-  timezone: Joi.string().optional().default("UTC").allow(null, "").messages({
-    "string.base": "timezone must be a string",
-  }),
+  contactTimezone: Joi.string()
+    .optional()
+    .default("UTC")
+    .allow(null, "")
+    .messages({
+      "string.base": "timezone must be a string",
+    }),
 
   isDeleted: Joi.boolean().optional().default(false).messages({
     "boolean.base": "isDeleted must be a boolean value",

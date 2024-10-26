@@ -28,10 +28,9 @@ Content-Type: application/json
 
 {
     "userId": 1,
-    "name" : "contact1",
-    "email": "contact1@gmail.com",
-    "phoneNumber": "12345678",
-    "address": "contact address"
+    "name" : "contact2",
+    "email": "contact2@gmail.com",
+    "phoneNumber": "123245678"
 }
 
 #####
