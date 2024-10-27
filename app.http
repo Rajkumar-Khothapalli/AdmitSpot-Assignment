@@ -3,15 +3,15 @@ POST http://localhost:3000/api/signup
 Content-Type: application/json
 
 {
-  "username": "test18",
-  "name": "test18",         
-  "email": "khothapallirajkumar@gmail.com",
+  "username": "test19",
+  "name": "test19",         
+  "email": "test19@gmail.com",
   "password": "test17@1234",  
   "gender": "other" 
 }
 
 #####
-//verify user with email
+//verify user with email --Passed
 GET http://localhost:3000/api/verify-email?verifyToken=9cd672dcc63a2c8f7ba16c1624239de509fccc82a9256e9ba33f2eb6e25e5aa0&userId=13
 
 //Login user --- Passed
@@ -38,12 +38,12 @@ Content-Type: application/json
 }
 
 #####
-//Get all contacts with the user id
+//Get all contacts with the user id --Passed
 GET http://localhost:3000/api/contacts/get-contacts/?userId=1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RpbmciLCJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwiaWF0IjoxNzI5OTM1MDc4fQ.0uasWiC8I9NphfKqZVAl1Z-LM7i_n0R7OBk86yQb0CA
 
 #####
-//Get contact with filters
+//Get contact with filters --Passed
 GET http://localhost:3000/api/contacts/get-filter-contacts?userId=1&name=&email=&timezone=&convertTimezone=&startDate=2024-10-24&endDate=2024-10-26
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RpbmciLCJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwiaWF0IjoxNzI5OTM1MDc4fQ.0uasWiC8I9NphfKqZVAl1Z-LM7i_n0R7OBk86yQb0CA
 

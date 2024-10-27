@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "crypto-js": "^4.2.0",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
     "dotenv": "^16.4.5",
@@ -23,9 +22,7 @@
     "nodemailer": "^6.9.15",
     "react": "19.0.0-rc-69d4b800-20241021",
     "react-dom": "19.0.0-rc-69d4b800-20241021",
-    "sib-api-v3-sdk": "^8.5.0",
-    "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "sib-api-v3-sdk": "^8.5.0"
   },
   "devDependencies": {
     "eslint": "^8",
