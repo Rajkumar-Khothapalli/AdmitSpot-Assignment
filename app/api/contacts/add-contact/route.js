@@ -4,7 +4,7 @@ import {
   createContact,
   retriveContacsUser,
   retriveContacts,
-} from "@/sqlQueries/contact";
+} from "@/models/contact";
 import { verifyToken } from "@/middlewares/verify-jwt-token";
 
 export async function POST(req) {
@@ -20,22 +20,8 @@ export async function POST(req) {
 
     //If Jwt token veried TRUE
     if (verificationResult.result === true) {
-      //console.log(verificationResult.decoded);
       const { userId, name, email, phoneNumber, address, timezone } =
         await req.json();
-
-      // Validate required fields
-      if (
-        userId === undefined ||
-        name === undefined ||
-        email === undefined ||
-        phoneNumber === undefined
-      ) {
-        return NextResponse.json({
-          message: "userId, name, email, and phoneNumber are required",
-          status: 400,
-        });
-      }
 
       // Set default values for optional fields
       const contactAddress = address || null; // Set to null if not provided

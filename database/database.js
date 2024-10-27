@@ -1,7 +1,6 @@
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 dotenv.config({ path: "../.env" });
-console.log(process.env.MYSQL_USER);
 
 const connectToDB = async () => {
   try {

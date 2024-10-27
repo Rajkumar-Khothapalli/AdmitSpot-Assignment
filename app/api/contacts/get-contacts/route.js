@@ -1,4 +1,4 @@
-import { retriveContacts } from "@/sqlQueries/contact";
+import { retriveContacts } from "@/models/contact";
 import { NextResponse } from "next/server";
 import { verifyToken } from "@/middlewares/verify-jwt-token";
 

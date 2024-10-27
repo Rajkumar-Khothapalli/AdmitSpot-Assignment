@@ -1,5 +1,5 @@
 import contactUpdateSchema from "@/joi-validations/contact-update-validation";
-import { retriveContactById, updateContact } from "@/sqlQueries/contact";
+import { retriveContactById, updateContact } from "@/models/contact";
 import { NextResponse } from "next/server";
 import { verifyToken } from "@/middlewares/verify-jwt-token";
 

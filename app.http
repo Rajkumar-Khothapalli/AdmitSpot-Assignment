@@ -3,12 +3,16 @@ POST http://localhost:3000/api/signup
 Content-Type: application/json
 
 {
-  "username": "test1",
-  "name": "test",         
-  "email": "test1@email.com",
-  "password": "test1@1234",  
+  "username": "test18",
+  "name": "test18",         
+  "email": "khothapallirajkumar@gmail.com",
+  "password": "test17@1234",  
   "gender": "other" 
 }
+
+#####
+//verify user with email
+GET http://localhost:3000/api/verify-email?verifyToken=9cd672dcc63a2c8f7ba16c1624239de509fccc82a9256e9ba33f2eb6e25e5aa0&userId=13
 
 //Login user --- Passed
 ####

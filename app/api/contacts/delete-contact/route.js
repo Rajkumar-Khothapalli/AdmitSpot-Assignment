@@ -1,4 +1,4 @@
-import { deleteContact, retriveContactById } from "@/sqlQueries/contact";
+import { deleteContact, retriveContactById } from "@/models/contact";
 import { NextResponse } from "next/server";
 import { verifyToken } from "@/middlewares/verify-jwt-token";
 
@@ -13,6 +13,7 @@ export async function DELETE(req) {
       );
     }
 
+    //if jwt token verified and true
     if (verificationResult.result === true) {
       const { searchParams } = new URL(req.url);
       const userId = searchParams.get("userId");

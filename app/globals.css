@@ -40,3 +40,12 @@ a {
     color-scheme: dark;
   }
 }
+
+.container {
+  background-color: aliceblue;
+  color: red;
+}
+
+.formcard {
+  background-color: rgb(222, 166, 166);
+}

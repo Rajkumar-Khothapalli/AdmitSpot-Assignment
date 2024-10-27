@@ -1,35 +1,27 @@
 import { NextResponse } from "next/server";
-import { retriveUser } from "@/sqlQueries/userAuth";
+import { retriveUser, retriveUserById } from "@/models/userAuth";
 import bcrypt from "bcrypt";
-import Joi from "joi";
 import dotenv from "dotenv";
 dotenv.config();
 const jwt = require("jsonwebtoken");
-
-//Joi schema for login validation
-const loginSchema = Joi.object({
-  identifier: Joi.string().min(3).required(), // can be username or email
-  password: Joi.string().min(8).required(),
-});
 
 export async function POST(req) {
   try {
     const body = await req.json();
     const { identifier, password } = body;
 
-    // Validate login data using Joi data validations
-    const { error } = loginSchema.validate({ identifier, password });
-    if (error) {
-      return NextResponse.json(
-        { message: error.details[0].message },
-        { status: 400 }
-      );
-    }
-
     // Query to check if the user exists
     const retrievedUser = await retriveUser(identifier, identifier);
 
     if (retrievedUser) {
+      //Add the below lines if not testing because need acutal email and its need to be verified
+      // if (retrievedUser.is_verified === 0) {
+      //   return NextResponse.json({
+      //     message: "Please verify your account!",
+      //     status: 401,
+      //   });
+      // }
+
       // Compare password with the hashed password
       const isPasswordMatched = await bcrypt.compare(
         password,

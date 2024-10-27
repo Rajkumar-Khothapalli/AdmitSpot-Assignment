@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { fetchContactsFilters } from "@/sqlQueries/contacts-filters";
+import { fetchContactsFilters } from "@/models/contacts-filters";
 import { verifyToken } from "@/middlewares/verify-jwt-token";
 
 export async function GET(req) {
