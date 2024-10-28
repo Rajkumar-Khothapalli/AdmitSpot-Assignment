@@ -3,11 +3,10 @@ POST http://localhost:3000/api/signup
 Content-Type: application/json
 
 {
-  "username": "test19",
-  "name": "test19",         
-  "email": "test19@gmail.com",
-  "password": "test17@1234",  
-  "gender": "other" 
+  "username": "meghana",
+  "name": "meghana",         
+  "email": "meghana.golajapu1999@gmail.com",
+  "password": "meghana@1234" 
 }
 
 #####

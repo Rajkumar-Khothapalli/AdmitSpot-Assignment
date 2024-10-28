@@ -81,7 +81,7 @@ export async function POST(req) {
 
       return NextResponse.json({
         message: "Contact created successfully!",
-        userId: newContact.insertId,
+        contactId: newContact.insertId,
       });
     } else if (verificationResult.result === false) {
       return NextResponse.json(
