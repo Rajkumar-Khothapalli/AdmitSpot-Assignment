@@ -31,7 +31,7 @@ const userSchema = Joi.object({
       "any.required": "Password is required",
     }),
 
-  gender: Joi.string()
+  defaultGender: Joi.string()
     .optional()
     .valid("male", "female", "other") // Specify valid options
     .messages({

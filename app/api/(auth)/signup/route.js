@@ -8,6 +8,7 @@ import { sendVerificationEmail } from "@/middlewares/send-email";
 export async function POST(req) {
   try {
     const { username, name, email, password, gender } = await req.json();
+    const defaultGender = gender || "other";
 
     // Validate request data using Joi
     const { error } = userSchema.validate({
@@ -15,7 +16,7 @@ export async function POST(req) {
       name,
       email,
       password,
-      gender,
+      defaultGender,
     });
 
     if (error) {
@@ -46,7 +47,7 @@ export async function POST(req) {
       name,
       email,
       hashedPassword,
-      gender,
+      defaultGender,
       emailVerifyToken
     );
 

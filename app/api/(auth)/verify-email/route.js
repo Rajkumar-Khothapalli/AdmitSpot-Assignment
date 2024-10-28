@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 export async function GET(req) {
   try {
     const { searchParams } = new URL(req.url);
-    console.log(searchParams);
     const verificationToken = searchParams.get("verifyToken") || null;
     const userId = searchParams.get("userId") || null;
 
