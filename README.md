@@ -60,7 +60,7 @@ Start the server
 
 ## Run the backend server
 
-required below environment variables and i ahve used the aivencloud.com for my sql database.
+required below environment variables and i have used the aivencloud.com for my sql database.
 
 ```bash
 MYSQL_HOST
@@ -131,5 +131,14 @@ https://documenter.getpostman.com/view/22333762/2sAY4uBNUr for detailed endpoint
 For detailed API request and response formats, refer to the Postman documentation.
 
 ## Additional information
+- Required these environment variables fot jwt token and email verification.
+```bash
+MY_SECRET_CODE
+SMTP_FROM_EMAIL
+SMTP_HOST
+SMTP_PORT
+SMTP_USER
+SMTP_PASSWORD
+```
 
 - if the deployed url doesn't work try use the app.http file to test out the api end points.
